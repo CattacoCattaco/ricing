@@ -2,17 +2,26 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
-PanelWindow {
-  anchors {
-    top: true
-    left: true
-    right: true
-  }
+Scope {
+  Variants {
+    model: Quickshell.screens
 
-  implicitHeight: 30
+    PanelWindow {
+      required property var modelData
+      screen: modelData
 
-  ClockWidget {
-    anchors.centerIn: parent
-    spacing: 10
+      anchors {
+        top: true
+        left: true
+        right: true
+      }
+
+      implicitHeight: 30
+
+      ClockWidget {
+        anchors.centerIn: parent
+        spacing: 10
+      }
+    }
   }
 }
