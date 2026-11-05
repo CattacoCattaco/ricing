@@ -53,6 +53,8 @@ Scope {
                     id: volumeSlider
                     
                     anchors.fill: parent
+                    anchors.leftMargin: window.implicitHeight / 2
+                    anchors.rightMargin: window.implicitHeight / 2
 
                     from: 0
                     value: Pipewire.defaultAudioSink?.audio.volume
