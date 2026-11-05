@@ -18,6 +18,8 @@ Scope {
 
       implicitHeight: 30
 
+      color: "#3f008f"
+
       ClockWidget {
         anchors.centerIn: parent
         spacing: 10
