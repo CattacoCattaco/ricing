@@ -1,12 +1,16 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
 
 Scope {
   Variants {
     model: Quickshell.screens
 
     PanelWindow {
+      id: topBar
+
       required property var modelData
       screen: modelData
 
@@ -20,9 +24,25 @@ Scope {
 
       color: "#3f008f"
 
-      ClockWidget {
+      RowLayout {
+        spacing: 50
         anchors.centerIn: parent
-        spacing: 25
+
+        ClockWidget {
+          spacing: 20
+        }
+
+        Button {
+          text: "change volume"
+
+          onClicked: volumeSelector.item.visible = !volumeSelector.item.visible
+        }
+      }
+
+      VolumeSelector {
+        id: volumeSelector
+        
+        parentWindow: topBar
       }
     }
   }
