@@ -22,7 +22,7 @@ Scope {
 
       ClockWidget {
         anchors.centerIn: parent
-        spacing: 10
+        spacing: 25
       }
     }
   }

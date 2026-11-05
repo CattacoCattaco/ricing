@@ -1,14 +1,20 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
+import QtQuick.Layouts
 
-Item {
-    property int spacing: 10
+RowLayout {
+    Text {
+        anchors.verticalCenter: parent.verticalCenter
+
+        text: Time.date
+        color: "#fb7"
+    }
 
     Text {
-        anchors.centerIn: parent
+        anchors.verticalCenter: parent.verticalCenter
 
-        text: Time.date + " ".repeat(spacing) + Time.time
+        text: Time.time
         color: "#fb7"
     }
 }
