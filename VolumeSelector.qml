@@ -19,7 +19,7 @@ Scope {
 
         function onVolumeChanged() {
             loader.item.visible = true
-            volumeSlider.value = Pipewire.defaultAudioSink?.audio.value
+            volumeSlider.value = Pipewire.defaultAudioSink?.audio.volume
         }
     }
 
@@ -55,6 +55,7 @@ Scope {
                     anchors.fill: parent
 
                     from: 0
+                    value: Pipewire.defaultAudioSink?.audio.volume
                     to: 1
 
                     onMoved: Pipewire.defaultAudioSink.audio.volume = value
