@@ -32,6 +32,10 @@ Scope {
           spacing: 20
         }
 
+        BatteryWidget {
+          spacing: 5
+        }
+
         Button {
           text: "change volume"
 

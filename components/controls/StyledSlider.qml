@@ -17,7 +17,7 @@ Slider {
 
         radius: height / 2
 
-        color: "#759"
+        color: "#879"
 
         Rectangle {
             width: control.visualPosition * parent.width
