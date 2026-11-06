@@ -3,6 +3,7 @@ import Quickshell.Io
 import Quickshell.Services.Pipewire
 import QtQuick
 import QtQuick.Controls
+import qs.components.controls
 
 Scope {
     id: root
@@ -17,9 +18,8 @@ Scope {
     Connections {
         target: Pipewire.defaultAudioSink?.audio
 
-        function onVolumeChanged() {
-            loader.item.visible = true
-            volumeSlider.value = Pipewire.defaultAudioSink?.audio.volume
+        function onVolumeChanged(): void {
+            item.visible = true
         }
     }
 
@@ -49,7 +49,7 @@ Scope {
                 
                 color: "#2f006f"
 
-                Slider {
+                StyledSlider {
                     id: volumeSlider
                     
                     anchors.fill: parent
